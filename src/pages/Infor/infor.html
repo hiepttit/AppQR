@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title style="text-align: center;font-family:-apple-system, Helvetica Neue, Roboto, Segoe UI, sans-serif;">
+        CHI TIẾT
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding="true" class="has-header">
+    <h1 id="page-heading3" style="text-align:center;">{{name}}</h1>
+    <div class="vendor">
+      <h2 id="page-heading3" style="text-align:center;">Chăm sóc</h2>
+      <div>
+        <img src="assets/imgs/trongcay.jpg"
+          style="display: block; width: 50%; height: auto; margin-left: auto; margin-right: auto;margin-bottom: 10px;">
+      </div>
+      <div id="page-container1">
+        <ion-list id="detail-list4" *ngFor="let item of lstProduct">
+          <div *ngIf="lstProduct!=null">
+            <div *ngIf="item.data.isPlanting===true">
+              <ion-item class="item-icon-left balanced" id="page-list-item2">
+                <ion-icon name="information-circle"></ion-icon>
+                <b>Thông tin:</b> {{item.data.name}}
+              </ion-item>             
+              <ion-item class="item-icon-left balanced" id="page-list-item5">
+                <ion-icon name="md-calendar"></ion-icon>
+                <b>Ngày thực hiện:</b> {{item.data.dateBegin}}
+              </ion-item>
+            </div> 
+          </div>
+        </ion-list>
+      </div>
+    </div>
+  </ion-content>
+  <!-- <ion-content padding id="page4">
+    <ion-list id="detail-list4" *ngFor="let item of lstProduct">
+      <ion-item color="none" id="detail-list-item27">
+        <div *ngIf="lstProduct!=null;else other_content">
+          {{item.data.name}}
+        </div>
+        <ng-template #other_content>other content here...</ng-template>
+      </ion-item>
+    </ion-list>
+  </ion-content> -->
