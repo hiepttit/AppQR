@@ -38,15 +38,18 @@ export class HomePage {
     if(this.check==true)
     {
       this.options = {
-        prompt: 'Scan you QR code'
+        prompt: ''
       };
       this.scanner.scan(this.options).then((data) => {
+        if(data.text==null || data.text=="")
+        {
+          return;
+        }
         this.scannedData = data; 
         this.qrText=data.text;    
         let loading = this.loadingCtrl.create({
           content: 'Loading Please Wait...'
-        });
-      
+        });     
         loading.present();
       
         setTimeout(() => {

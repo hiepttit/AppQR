@@ -13,8 +13,10 @@ export class InforPage {
   lstInfor: any={};
   lst: any = null;
   name: string = "";
+  img: string = "";
   constructor(public navCtrl: NavController, navParams: NavParams, public productProvider: ProductProvider, public alert: AlertController) {
     this.infor = navParams.get('infor');
+    console.log(this.infor)
     this.Infor(); 
   }
   async Infor() {

@@ -7,6 +7,7 @@
 </ion-header>
 <ion-content padding="true" class="has-header">
   <h1 id="page-heading3" style="text-align:center;">{{name}}</h1>
+  <img src="http://foodtraceability.somee.com{{img}}" style="display: block; height: auto; margin-left: auto; margin-right: auto;margin-bottom: 10px;">
   <div class="vendor">
     <h2 id="page-heading3" style="text-align:center;">Trồng Trọt</h2>
     <div>
@@ -17,25 +18,23 @@
       <ion-list id="detail-list4" *ngFor="let item of lstProduct">
         <div *ngIf="lstProduct!=null">
           <div *ngIf="item.data.idRole==1">
-            <ion-item class="item-icon-left balanced" id="page-list-item2">
+            <ion-item class="item-icon-left balanced" id="page-list-item2" text-wrap>
               <ion-icon name="information-circle"></ion-icon>
-              <b>Tên:</b> {{item.data.nameOfUser}}
+              <b>Sản xuất tại:</b> {{item.data.company}}
             </ion-item>
-            <ion-item class="item-icon-left balanced" id="page-list-item3">
+            <ion-item class="item-icon-left balanced" id="page-list-item3" text-wrap>
               <ion-icon name="ios-home-outline"></ion-icon>
-              <b>Địa chỉ:</b> {{item.data.adrs}},
-              <div>{{item.data.city}},</div>
-              <div>{{item.data.area}}</div>
+              <b>Địa chỉ:</b> {{item.data.adrs}}, {{item.data.city}}, {{item.data.area}}
             </ion-item>
-            <ion-item class="item-icon-left balanced" id="page-list-item4">
+            <ion-item class="item-icon-left balanced" id="page-list-item4" text-wrap>
               <ion-icon name="ios-mail-outline"></ion-icon>
               <b>Email:</b> {{item.data.email}}
             </ion-item>
-            <ion-item class="item-icon-left balanced" id="page-list-item5">
+            <ion-item class="item-icon-left balanced" id="page-list-item5" text-wrap>
               <ion-icon name="md-calendar"></ion-icon>
               <b>Ngày trồng:</b> {{item.data.dateBegin}}
             </ion-item>
-            <ion-item class="item-icon-left balanced" id="page-list-item6">
+            <ion-item class="item-icon-left balanced" id="page-list-item6" text-wrap>
               <ion-icon name="ios-calendar-outline"></ion-icon>
               <b>Ngày thu hoạch:</b> {{item.data.dateEnd}}
             </ion-item>
@@ -57,25 +56,23 @@
       <ion-list id="detail-list4" *ngFor="let item of lstProduct">
         <div *ngIf="lstProduct!=null">
           <div *ngIf="item.data.idRole==2;else other_content2">
-            <ion-item class="item-icon-left balanced" id="page-list-item2">
+            <ion-item class="item-icon-left balanced" id="page-list-item2" text-wrap>
               <ion-icon name="information-circle"></ion-icon>
-              <b>Tên:</b> {{item.data.nameOfUser}}
+              <b>Công ty vận chuyển:</b> {{item.data.company}}
             </ion-item>
-            <ion-item class="item-icon-left balanced" id="page-list-item3">
+            <ion-item class="item-icon-left balanced" id="page-list-item3" text-wrap>
               <ion-icon name="ios-home-outline"></ion-icon>
-              <b>Địa chỉ:</b> {{item.data.adrs}},
-              <div>{{item.data.city}},</div>
-              <div>{{item.data.area}}</div>
+              <b>Địa chỉ:</b> {{item.data.adrs}}, {{item.data.city}}, {{item.data.area}}
             </ion-item>
-            <ion-item class="item-icon-left balanced" id="page-list-item4">
+            <ion-item class="item-icon-left balanced" id="page-list-item4" text-wrap>
               <ion-icon name="ios-mail-outline"></ion-icon>
               <b>Email:</b> {{item.data.email}}
             </ion-item>
-            <ion-item class="item-icon-left balanced" id="page-list-item5">
+            <ion-item class="item-icon-left balanced" id="page-list-item5" text-wrap>
               <ion-icon name="md-calendar"></ion-icon>
               <b>Ngày nhận:</b> {{item.data.dateBegin}}
             </ion-item>
-            <ion-item class="item-icon-left balanced" id="page-list-item6">
+            <ion-item class="item-icon-left balanced" id="page-list-item6" text-wrap>
               <ion-icon name="ios-calendar-outline"></ion-icon>
               <b>Ngày chuyển xong:</b> {{item.data.dateEnd}}
             </ion-item>
@@ -95,25 +92,23 @@
       <ion-list id="detail-list4" *ngFor="let item of lstProduct">
         <div *ngIf="lstProduct!=null">
           <div *ngIf="item.data.idRole==3;else other_content3">
-            <ion-item class="item-icon-left balanced" id="page-list-item2">
+            <ion-item class="item-icon-left balanced" id="page-list-item2" text-wrap>
               <ion-icon name="information-circle"></ion-icon>
-              <b>Tên:</b> {{item.data.nameOfUser}}
+              <b>Được bán tại:</b> {{item.data.company}}
             </ion-item>
-            <ion-item class="item-icon-left balanced" id="page-list-item3">
+            <ion-item class="item-icon-left balanced" id="page-list-item3" text-wrap>
               <ion-icon name="ios-home-outline"></ion-icon>
-              <b>Địa chỉ:</b> {{item.data.adrs}},
-              <div>{{item.data.city}},</div>
-              <div>{{item.data.area}}</div>
+              <b>Địa chỉ:</b> {{item.data.adrs}}, {{item.data.city}}, {{item.data.area}}
             </ion-item>
-            <ion-item class="item-icon-left balanced" id="page-list-item4">
+            <ion-item class="item-icon-left balanced" id="page-list-item4" text-wrap>
               <ion-icon name="ios-mail-outline"></ion-icon>
               <b>Email:</b> {{item.data.email}}
             </ion-item>
-            <ion-item class="item-icon-left balanced" id="page-list-item5">
+            <ion-item class="item-icon-left balanced" id="page-list-item5" text-wrap>
               <ion-icon name="md-calendar"></ion-icon>
               <b>Ngày mua:</b> {{item.data.dateBegin}}
             </ion-item>
-            <ion-item class="item-icon-left balanced" id="page-list-item6">
+            <ion-item class="item-icon-left balanced" id="page-list-item6" text-wrap>
               <ion-icon name="ios-calendar-outline"></ion-icon>
               <b>Ngày nhận hàng:</b> {{item.data.dateEnd}}
             </ion-item>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { ProductProvider } from '../../providers/data';
 import { InforPage } from '../Infor/infor';
+import { HomePage } from '../home/home';
 import { LoadingController } from 'ionic-angular';
 
 @Component({
@@ -13,6 +14,7 @@ export class DetailPage {
   lstProduct: any = null;
   lstInfor: any = null;
   name: string = "";
+  img: string = "";
   check: any = null;
   constructor(public navCtrl: NavController, navParams: NavParams, public loadingCtrl: LoadingController,public productProvider: ProductProvider, public alert: AlertController) {
     this.data = navParams.get('data');
@@ -21,8 +23,22 @@ export class DetailPage {
   }
   private async getListProduct() {
     this.lstProduct = await this.productProvider.getList(this.data);
+    if(this.lstProduct==null || this.lstProduct=="")
+    {
+      this.presentAlert()
+      this.navCtrl.pop();
+    }
     this.name = this.lstProduct[0].data.nameProduct;
+    this.img = this.lstProduct[0].data.imgPath;
   }
+  presentAlert() {
+    let alert = this.alert.create({
+      title: 'Thông báo',
+      subTitle: 'Không có sản phẩm này! Vui lòng quét mã khác',
+      buttons: ['OK']
+    });
+    alert.present();
+  } 
   async detail() {
     this.lstProduct = await this.productProvider.getList(this.data);
     for (let i = 0; i < this.lstProduct.length; i++) {
@@ -45,7 +61,6 @@ export class DetailPage {
   
     setTimeout(() => {
       loading.dismiss();
-    }, 5000);
-    
+    }, 5000);    
   }
 }
